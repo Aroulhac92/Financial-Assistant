@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+html { font-family: 'Lato', sans-serif; }
+
+.bottom-border {
+    display: block;
+    height: 1px;
+    width: 90%;
+    margin: 1% 5%;
+    border: .5px solid rgb(147, 147, 147);
+}
+
+body {
+    margin: 1% 1% -1% 1%;
+}
+
+.section-header {
+    margin-top: 0;
+    padding: 2% 0;
+    font-size: 110%;
+    background-color: rgb(95, 95, 95);
+    text-align: center;
+    color: white;
+}
+
+.main-body {
+    width: 31%;
+    vertical-align: top;
+    display: inline-block;
+    margin: 0 1%;
+}
