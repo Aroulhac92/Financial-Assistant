@@ -1,3 +1,5 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 /* You can add global styles to this file, and also import other style files */
 html { font-family: 'Lato', sans-serif; }
 
@@ -16,7 +18,7 @@ body {
 .section-header {
     margin-top: 0;
     padding: 2% 0;
-    font-size: 110%;
+    font-size: 140%;
     background-color: rgb(95, 95, 95);
     text-align: center;
     color: white;
@@ -27,4 +29,53 @@ body {
     vertical-align: top;
     display: inline-block;
     margin: 0 1%;
+}
+
+.content-box {
+    width: 90%;
+    margin: 0 5%;
+    max-height: 80%;
+    align-content: center;
+    overflow: hidden;
+    overflow-y: scroll;
+    scroll-behavior: auto;
+    scroll-behavior: smooth;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.securities-container {
+    padding: 0 2%;
+    display: block;
+ }
+
+ .dollar-sign {
+    font-size: 50%;
+    vertical-align: top;
+    margin-right: 2%;
+    color: rgba(40, 40, 40, 0.4);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: "Roboto", "Helvetica Neue", sans-serif; }
+
+
+.under-const {
+    font-size: 150%;
+    font-style: italic;
+    text-align: center;
+    line-height: 150%;
 }

@@ -1,0 +1,21 @@
+<header class="section-header">
+  {{ stockSearch.header | titlecase }}
+</header>
+<div id="bar-and-btn">
+  <input type="text" id="stock-search" [formControl]="stockSearch.form" placeholder="Search a Ticker or Symbol" (click)="clearSearchField()" (keydown.enter)="pullSymbols()">
+  <div class="btn" (click)="pullSymbols()">Search</div>
+</div>
+<div class="bottom-border"></div>
+<div class='content-box'>
+  <ul>
+    <li *ngFor="let item of availableStocks">
+      <div class="container">
+        <div class="stock-symbol">{{ item.symbol }}</div>
+        <div class="stock-name">{{ item.name }}</div>
+        <div class="match-score">
+          <span>Match</span>{{ item.matchScore }}%<button (click)="saveSymbol(item.symbol, item.name)">Add</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

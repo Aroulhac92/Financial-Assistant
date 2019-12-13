@@ -1,0 +1,62 @@
+/* GRID THE MAIN SECTION AND NOTES */
+article {
+    display: grid;
+    margin-left: 2%;
+    grid-template-columns: repeat(3, 30vw);
+    grid-template-rows: repeat(6, 16vh);
+    grid-gap: 2em;
+    align-items: middle;
+}
+
+/* STYLE THE INDIVIDUAL CONTENT BOXES */
+
+section {
+    /* background-color: rgba(250, 235, 215, 0.448); */
+    border: 2px solid rgba(232, 232, 232, 0.859);
+    border-radius: 15px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.cryptocurrency {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 5;
+    grid-row-end: 7;
+}
+
+.notes {
+    grid-column: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    align-self: start;
+}
+
+.saved-notes {
+    grid-column: 3;
+    grid-row-start: 2;
+    grid-row-end: 5;
+}
+
+.search {
+    grid-column: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.my-stocks {
+    grid-column: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.hot-stocks {
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+
+.tech-stocks {
+    grid-column: 1;
+    grid-row-start: 3;
+    grid-row-end: 5;
+}

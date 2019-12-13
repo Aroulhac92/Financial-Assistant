@@ -1,0 +1,115 @@
+input {
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    width: 70%;
+    outline: none;
+    height: auto;
+    font-size: 110%;
+    text-align: center;
+    display: inline-block;
+}
+
+#bar-and-btn {
+    margin: 2%;
+}
+
+.btn {
+    margin-left: 1%;
+    border: 1px solid black;
+    padding: 1% 1.5%;
+    border-radius: 10px;
+    display: inline-block;
+    opacity: 0;
+    cursor: default;
+    height: auto;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    transition: opacity .1s;
+}
+
+.btn:hover {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+input:not(:placeholder-shown) + .btn {
+    opacity: 100;
+    transition: opacity .2s;
+}
+
+input:not(:placeholder-shown) + .btn:hover {
+    cursor: pointer;
+}
+
+.content-box {
+    max-height: 60%;
+}
+.content-box li {
+    list-style: none;
+    text-align: center;
+    background-color: rgba(230, 230, 230, 0.4);
+    border-radius: 10px;
+    margin: 2% 3%;
+    padding: 7% 0;
+    border-bottom: .5px dotted rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s;
+}
+
+.content-box li:hover {
+   background-color: rgba(0, 0, 0, .1);
+}
+
+.content-box li:first-child {
+    margin-top: 0;
+}
+
+.container .div {
+    display: inline-block;
+    font-size: 130%;
+    min-height: 100%;
+}
+
+.container .stock-symbol {
+    margin-left: 5%;
+}
+
+.stock-symbol {
+    float: left;
+    width: 15%;
+}
+
+.stock-name {
+    float: left;
+    width: 65%;
+    padding-top: -10%;
+}
+
+.match-score {
+   float: left;
+   margin-top: -1%;
+   width: 8%;
+   font-size: 60%;
+}
+
+.match-score span {
+    margin-top: -40%;
+    margin-bottom: 5%;
+    display: block;
+    text-decoration: underline;
+    font-size: 60%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0.009);
+    border-radius: 5px;
+    margin: 2% 0 0 -3%;
+}
+
+.container {
+    margin-top: -2%;
+}

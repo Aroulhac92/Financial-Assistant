@@ -1,0 +1,85 @@
+.tech-companies-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    margin-top: 7%;
+}
+
+.each-company {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
+.name-container {
+    margin: 20% 0;
+}
+
+.price-container {
+    padding: 10px;
+    background-color: rgba(215, 215, 215, 0.1);
+    border-radius: 10px;
+    margin: 40% 0 20% 0;
+    transition: border .2s;
+}
+
+.price-container:hover {
+    border: .5px solid rgba(0, 0, 0);
+}
+
+span {
+    font-size: 50%;
+    vertical-align: top;
+    color: rgba(67, 67, 67, 0.300);
+}
+
+.name {
+    color: rgb(92, 0, 0);
+    text-align: center;
+    font-family: 'Fira Sans', sans-serif;
+    border-radius: 5px;
+    padding: 2% 5px;
+}
+
+.left-arrow,
+.right-arrow {
+    cursor: pointer;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    background-color: rgb(62, 33, 33);
+    padding: 3%;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.left-arrow {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.right-arrow {
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+i {
+    color: rgb(255, 180, 180);
+    zoom: 1.5;
+}
+
+.container {
+    padding: 20px;
+}
+
+.price {
+    text-align: center;
+    font-size: 130%;
+    height: auto;
+    cursor: default;
+}

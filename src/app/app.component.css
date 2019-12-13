@@ -1,16 +1,16 @@
-router-outlet {
-    display: block;
-    position: relative;
-}
-
 div {
     display: flex;
+    width: 100%;
     flex-direction: column;
+}
+
+app-nav {
+    margin-bottom: 1%;
 }
 
 app-footer {
     bottom: 0;
     width: 90%;
     margin: auto;
-    margin-bottom: 0;
+    margin-top: 3%;
 }

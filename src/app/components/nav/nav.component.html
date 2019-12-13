@@ -1,0 +1,22 @@
+<html ng-app>
+  <nav>
+    <div class="left-side">
+      <h1 class='title'>Welcome to {{ navOptions.title }}</h1>
+    </div>
+
+    <div class="middle"><div class="profile-block"><img src="{{ profilePicture }}"/><h3 class="name" [ngStyle]="smallerFont">{{ firstName | titlecase }} {{ lastName | titlecase }}</h3></div></div>
+
+    <div class="right-side">
+      <h3>
+        <a class="btn" routerLink="/">{{ navOptions.home }}</a><div>|</div>
+        <a class="btn" routerLink="/budget">{{ navOptions.budget }}</a><div>|</div>
+        <a class="btn" routerLink="/calc">{{ navOptions.calc }}</a><div>|</div>
+        <a class="btn" routerLink="/pp">{{ navOptions.pp }}</a>
+      </h3>
+      
+    </div>
+  </nav>
+
+  <div class="bottom-border"></div>
+</html>
+

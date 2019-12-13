@@ -1,0 +1,10 @@
+<link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
+<div class="notes">
+  <div class="input-notes">
+    <textarea class="notes-area" placeholder="Save notes for later." [formControl]="note" (keydown.enter)="logNote()"></textarea>
+    <button (click)="logNote()">{{ button | uppercase }}</button>
+  </div>
+</div>
+
+  
+

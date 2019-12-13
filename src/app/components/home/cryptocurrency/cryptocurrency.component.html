@@ -1,0 +1,14 @@
+<p class="section-header" (click)="runFunction()">
+  {{ cryptoTitle | titlecase }}
+</p>
+
+<div class="top-crypt-curr content-box">
+  <li class="each-curr" *ngFor="let curr of exampleCurr">
+    <div class="securities-container clearfix">
+      <div [ngStyle]="{'font-size': sizeCrypt + 'px'}">{{ curr.from }}</div>
+      <div [ngStyle]="{'font-size': size + 'px'}">{{ curr.to }}</div>
+      <div><span class="dollar-sign">$</span>{{ curr.xChange }}</div>
+    </div>
+    <div class="bottom-border"></div>
+  </li>
+</div>

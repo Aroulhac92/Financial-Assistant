@@ -1,0 +1,40 @@
+.notes {
+    background-color: rgba(250, 235, 215, 0.448);
+    background-image: linear-gradient(rgb(255, 230, 198), rgba(255, 255, 255, 0.3));
+    height: 98%;
+    padding-left: 1%;
+}
+
+/*   AREA WHERE YOU TYPE YOUR TEXT AND ASSOCIATED BUTTON   */
+
+.input-notes {
+    display: block;
+}
+
+textarea {
+    padding: 2%;
+    border: none;
+    display: block;
+    background-color: rgba(250, 235, 215, 0);
+    font-size: 90%;
+    width: 90%;
+    margin: 0 5%;
+    outline: none;
+    resize: none;
+    font-family: 'Slabo 27px', serif;
+}
+
+button {
+    height: 15%;
+    display: block;
+    border: 1px solid rgba(97, 42, 42, 0.4);
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, .300);
+    cursor: pointer;
+    transition: background-color .05s;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0);
+}

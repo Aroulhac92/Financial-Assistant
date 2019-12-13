@@ -1,0 +1,17 @@
+<p class="section-header">
+  Your Notes
+</p>
+<div class="hover-msg" (click)="testingForIn()">Click on your message to expand and contract it</div>
+<ul class="content-box">
+  <div *ngIf="newSavedNotes.length === 0">Go ahead and add a note!</div>
+  <li *ngFor="let note of newSavedNotes" [ngClass]="{ 'dim': note.dimNote }">
+    <div class="left-side" (click)="toggleFocus(note.content)" [ngClass]="{
+    'justify': note.contentLongerThan70,
+    'center': !note.contentLongerThan70,
+    'focused': note.focused
+  }">{{ note.content }}</div>
+    <div class="right-side">
+      <button class="delete" (click)="deleteNoteAfterTimeout(note.content)">Delete</button>
+    </div>
+  </li>
+</ul>

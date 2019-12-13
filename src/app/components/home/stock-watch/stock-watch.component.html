@@ -1,0 +1,10 @@
+<header class="section-header">
+  {{ title }}
+  <span>Trending By Gain</span>
+</header>
+
+<div class="top-stocks">
+  <section (click)="displayCompanyInfo()" *ngFor="let stock of topCompanyArray">{{ stock.name }}</section>
+</div>
+<div class="stock-descrip"></div>
+

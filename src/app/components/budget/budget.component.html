@@ -1,0 +1,46 @@
+<article>
+  <section class="main-body">
+    <div>
+    --> This is where you will add all items to your budget.
+      <div class="income-expense">
+        <div class="expense-decorator">Add an expense: </div>
+        <input type="search" placeholder="Type of Expense">
+        <div>
+          <span>&#36;</span><input type="number" [formControl]="expense" placeholder="How Much?">
+        </div>
+      </div>
+      
+      <div class="radio-buttons">
+        <div class="radio-button">
+          <input type="radio" id="expense" name="income-expense" value="expense" checked>
+          <label for="expense">Expense</label>
+        </div>
+        <div class="radio-button">
+          <input type="radio" id="income" name="income-expense" value="income">
+          <label for="income">Income</label>
+        </div>
+        <div class="submit-btn">
+          <input type="submit" value="Add">
+        </div>
+      </div>
+      <div class="total">
+        --> This is where you will see your total
+        <!-- {{  }} -->
+      </div>
+      
+    </div>
+      
+  </section>
+  <section class="main-body">
+    <div>
+      --> This is where you will see all income items in your budget.
+    </div>
+  </section>
+  <section class="main-body">
+    <div>
+      --> This is where you will see all expenses.
+    <p>${{ expense.value }}</p>
+    </div>
+  </section>
+</article>
+
