@@ -19,7 +19,12 @@ export class NavComponent implements OnInit {
   firstName:string;
   lastName:string;
   profilePicture:string;
-  smallerFont:object; /* For if I need to implement functionality for smaller font */
+  setProfileImgStyle(name:string) {
+    if (name) {
+      let nameLength = name.length > 5 ? '20px' : '30px';
+      return nameLength
+    }
+  }
 
   constructor(private retrieveProfile: ProfilePicService) { }
 

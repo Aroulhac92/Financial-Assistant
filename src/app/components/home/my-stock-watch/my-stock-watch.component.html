@@ -7,13 +7,16 @@
 <div class="titles clearfix"><span>Name</span><span>Symbol</span><span>Mkt. Open</span><span>Mkt. High</span></div>
 
 <div class="my-stocks content-box">
-  <div class="placeholder" *ngIf="needsPlaceholder"><span>&#8592;</span>Search a stock to the left
-    <br><span>&#8592;</span>
-    <br><span>&#8592;</span>
+  <div class="placeholder" *ngIf="needsPlaceholder">
+    <span>&#8592;</span>
+    <br><br>
+    <span>&#8592;</span><div>Search a stock to the left</div>
+    <br><br>
+    <span>&#8592;</span>
   </div>
   <li class="my-stock" *ngFor="let savedStock of myStocks">
     <div class="securities-container clearfix">
-      <div [className]="savedStock.name.length > 9 ? 'size-is-60' : 'my-stock-name'">{{ savedStock.name }}</div>
+      <div [ngClass]='stockNameLength(savedStock.name)'>{{ savedStock.name }}</div>
       <div class="my-stock-symbol">{{ savedStock.symbol }}</div>
       <div class="mkt-open"><span class="dollar-sign">$</span>{{ savedStock.mktOpen }}</div>
       <div class="current-price"><span class="dollar-sign">$</span>{{ savedStock.high }}</div>

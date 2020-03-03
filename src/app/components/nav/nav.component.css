@@ -1,12 +1,7 @@
-html {
-    height: 100%;
-}
-
 nav {
     display: flex;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.600), rgba(255, 255, 255, 0.735)), url(../../../assets/cash.jpg);
-    background-size: 40% auto;
-    background-attachment: fixed;
+    background: linear-gradient(rgba(179, 179, 179, 0.818), rgb(12, 55, 0, .900)), url('../../../assets/stock-img.jpeg') no-repeat;
+    background-size: 100%;
     width: 100%;
     height: 100%;
     padding: 0 4% 2% 4%;
@@ -22,14 +17,14 @@ nav {
 
 .left-side {
     order: 1;
-    width: 40%;
-    margin: 1% 0 1% 1%;
+    width: 7%;
+    margin: auto;
 }
 
 .middle {
     order: 2;
-    width: 10%;
-    padding: auto;
+    width: 40%;
+    padding-top: 20px;
 }
 
 .right-side {
@@ -46,16 +41,22 @@ img {
 }
 
 .name {
+    opacity: 90%;
     margin-top: 2%;
     display: block;
 }
 
 .profile-block {
-    background-image: linear-gradient(rgba(250, 250, 250, 0.77), rgba(255, 255, 255, 0));
     border-radius: 10%;
     margin-top: 10%;
     padding: 4% 1% 1% 1%;
     text-align: center;
+}
+
+.name-container {
+    border-radius: 5px;
+    padding: 2%;
+    margin-top: 6%;
 }
 
 h3 a {

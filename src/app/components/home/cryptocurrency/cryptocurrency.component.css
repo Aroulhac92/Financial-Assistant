@@ -1,15 +1,18 @@
+.top-crypt-curr {
+    padding: 2% 0;
+}
+
 .each-curr {
     list-style: none;
 }
 
 .securities-container div {
+    background-color: rgba(255, 0, 0, 0.05);
+    border-radius: 5px;
     float: left;
     font-size: 110%;
-    margin: 1%;
-    width: 30%;
+    margin: .5%;
+    width: 32%;
     padding: .5%;
     text-align: center;
-    background-color: rgba(255, 0, 0, 0.1);
-    border: .5px solid rgba(0, 0, 0, 0.149);
-    border-radius: 5px;
 }

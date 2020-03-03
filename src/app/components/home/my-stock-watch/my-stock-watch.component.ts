@@ -3,6 +3,7 @@ import { StockPullService } from '../../../services/stock-pull.service';
 import { AppendStockService } from '../../../services/append-stock.service';
 import { GlobalFunctionsService } from 'src/app/services/global-functions.service';
 import { DateServiceService } from 'src/app/services/date-service.service';
+import { ImportSavedStock } from 'src/app/services/interface';
 
 @Component({
   selector: 'app-my-stock-watch',
@@ -14,14 +15,14 @@ export class MyStockWatchComponent implements OnInit {
 
   constructor(private pullStock : StockPullService, private appendStock : AppendStockService, private global: GlobalFunctionsService, private date: DateServiceService) { }
 
-  title:string = 'Stocks I am Watching'
+  title = 'Stocks I am Watching'
 
   // Inserts html to alert if markets are closed
-  marketsOpen:boolean
-  needsPlaceholder:boolean
+  marketsOpen:boolean;
+  needsPlaceholder:boolean;
 
   // Contains all stocks that you have selected from search
-  myStocks = []
+  myStocks:Array<ImportSavedStock> = [];
 
   ngOnInit() {
 
@@ -29,10 +30,15 @@ export class MyStockWatchComponent implements OnInit {
       this.pullStockInfoBySym(el[0], el[1])
     })
   }
-
+  
   ngDoCheck() {
     this.needsPlaceholder = (this.myStocks.length === 0)
     this.marketsOpen = this.date.currentTime[0] > 16 || (this.date.currentTime[0] === 16 && this.date.currentTime[1] >= 30)
+  }
+
+  stockNameLength(name:string) {
+
+    return name.length > 9 ? name.length > 15 ? 'large-word' : 'medium-word' : '';
   }
   
   // Pull the stock trade information using array from stockSearch

@@ -14,9 +14,9 @@ export class StockWatchComponent implements OnInit {
 
   title:string = "Top Stocks"
 
-  displayCompanyInfo = () => {
+  displayCompanyInfo = (stockName:string) => {
 
-    this.CompanyPopup.open()
+    this.CompanyPopup.open(stockName)
   }
 
   topCompanyArray = []

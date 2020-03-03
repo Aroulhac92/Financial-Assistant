@@ -5,7 +5,8 @@ div {
 }
 
 app-nav {
-    margin-bottom: 1%;
+    margin: 1%;
+    padding: 1%;
 }
 
 app-footer {

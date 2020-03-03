@@ -16,7 +16,7 @@ body {
 }
 
 .section-header {
-    margin-top: 0;
+    margin: 0;
     padding: 2% 0;
     font-size: 140%;
     background-color: rgb(95, 95, 95);
@@ -34,6 +34,7 @@ body {
 .content-box {
     width: 90%;
     margin: 0 5%;
+    padding-bottom: 15px;
     max-height: 80%;
     align-content: center;
     overflow: hidden;

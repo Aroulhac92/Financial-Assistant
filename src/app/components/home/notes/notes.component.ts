@@ -16,16 +16,24 @@ export class NotesComponent implements OnInit {
   note = new FormControl('')
   savedNote:string;
 
-  logNote() {
-    if (this.note.value !== '') {
-      this.savedNote = this.note.value
-      this.appendNote.sendNote(this.savedNote)
+  test(word) {
+    console.log(word)
+  }
+
+  logNote(callback) {
+    let newNote = this.note.value
+    if (newNote !== '') {
+      callback(newNote)
+      this.appendNote.sendNote(newNote)
       this.note.reset()
     } else alert('Please add a note.')
   }
 
-  ngOnInit() {
+  
+  /** Testing HackerRank */
+  sampleArray = [-4, 3, -9, 0, 4, 1]
 
+  ngOnInit() {
   }
 
 }

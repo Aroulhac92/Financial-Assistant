@@ -26,6 +26,13 @@ export interface SavedStockInfo {
     matchScore?: number,
 }
 
+export interface ImportSavedStock {
+    name: symbol,
+    symbol: string,
+    mktOpen: string,
+    high: string
+}
+
 export interface CurrencyData {
     realRate: {
         from: string,

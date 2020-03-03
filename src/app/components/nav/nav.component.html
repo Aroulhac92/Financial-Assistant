@@ -1,10 +1,17 @@
 <html ng-app>
   <nav>
     <div class="left-side">
-      <h1 class='title'>Welcome to {{ navOptions.title }}</h1>
+      <div class="profile-block">
+        <div class="name-container">
+          <!-- <h3 class="name" [ngStyle]="{'font-size': setProfileImgStyle(firstName)}">{{ firstName | titlecase }}</h3> -->
+        </div>
+        <img src="{{ profilePicture }}"/>
+      </div>
     </div>
-
-    <div class="middle"><div class="profile-block"><img src="{{ profilePicture }}"/><h3 class="name" [ngStyle]="smallerFont">{{ firstName | titlecase }} {{ lastName | titlecase }}</h3></div></div>
+    
+    <div class="middle">
+      <h1 class='title'>Welcome to {{ navOptions.title }}, {{ firstName | titlecase}}</h1>
+    </div>
 
     <div class="right-side">
       <h3>

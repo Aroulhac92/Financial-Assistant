@@ -19,6 +19,7 @@ section {
 }
 
 .cryptocurrency {
+    background-color: rgba(255, 0, 0, 0.1);
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 5;

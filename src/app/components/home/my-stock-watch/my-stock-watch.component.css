@@ -16,13 +16,16 @@
 }
 
 .my-stock-name {
-    padding: 3%;
-}
-
-.size-is-60 {
-    font-size: 80%;
     padding: 5% 1%;
     word-wrap: break-word;
+}
+
+.medium-word {
+    font-size: 80%;
+}
+
+.large-word {
+    font-size: 60%;
 }
 
  .titles {

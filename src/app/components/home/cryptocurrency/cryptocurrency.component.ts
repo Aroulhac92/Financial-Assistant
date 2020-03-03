@@ -35,6 +35,17 @@ export class CryptocurrencyComponent implements OnInit {
     // this.pullTopCrypto()
   }
 
+  convertCurr(name:string) {
+    let symbol:string;
+    
+      switch (name) {
+        case 'United States Dollar' :
+          symbol = 'USD'
+      }
+
+    return symbol
+  }
+
   pullTopCrypto() {
     this.cryptocurrencies.forEach( el => {
       this.stockInfo.pullCryptoData(el).subscribe(data => {
@@ -43,7 +54,7 @@ export class CryptocurrencyComponent implements OnInit {
         }
         data.realRate = {
           from: data.realRate['2. From_Currency Name'],
-          to: data.realRate['4. To_Currency Name'],
+          to: this.convertCurr(data.realRate['4. To_Currency Name']),
           xChange: this.global.twoDigitDecimal(parseFloat(data.realRate['5. Exchange Rate']))
         }
         this.topCurr.push(data.realRate)
