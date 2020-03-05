@@ -2,9 +2,10 @@
   {{ title }}
   <span>Trending By Gain</span>
 </header>
-
-<div class="top-stocks">
-  <section (click)="displayCompanyInfo(stock.name)" *ngFor="let stock of topCompanyArray">{{ stock.name }}</section>
-</div>
-<div class="stock-descrip"></div>
+<article>
+  <div class="top-stocks">
+    <section (click)="displayCompanyInfo(stock)" *ngFor="let stock of topCompanyArray">{{ stock.name }}</section>
+  </div>
+  <div class="stock-descrip"></div>
+</article>
 

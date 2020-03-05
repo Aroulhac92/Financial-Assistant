@@ -53,14 +53,14 @@ export interface TechStockInfo {
     }
 }
 
-export interface TopStocks {
-    securities:Array<TopStocksDetails>,
-    nextPage:string
+export interface TopStocksDetails {
+    id:string,
+    name:string,
+    ticker:string
 }
 
-interface TopStocksDetails {
-    id:string,
-    name:string
+export interface TopStocks {
+    securities:Array<TopStocksDetails>
 }
 
 export interface NotesObject {

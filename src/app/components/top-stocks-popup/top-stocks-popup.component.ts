@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core'
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap'
+import { TopStocksDetails } from '../../services/interface'
 
 @Component({
   selector: 'ngbd-modal-content',
@@ -7,9 +8,9 @@ import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap'
   styleUrls:['./top-stocks-popup.component.css']
 })
 
-/** This component contains all the content and does work with that content */
+/** Provide information to display here */
 export class NgbdModalContent {
-  @Input() name:any;
+  @Input() name:string;
 
   constructor(public activeModal: NgbActiveModal) {}
 
@@ -20,18 +21,20 @@ export class NgbdModalContent {
   templateUrl: './top-stocks-popup.component.html'
 })
 
-/** This component serves as the communication link between the popup NgbdModal and our main app */
+/** Do all work in this component */
 export class TopStocksPopupComponent {
   
   constructor(private modalService: NgbModal) {}
 
-  pullCompanyData(companyName:string) {
+  pullCompanyData(ticker:string) {
     // Run company name through a service that pulls historical and biographical data to be made available for NgbdModal
     
   }
 
-  open(instanceName:string) {
+  open(instance:TopStocksDetails) {
+
+    console.log(instance);
     const modalRef = this.modalService.open(NgbdModalContent);
-    modalRef.componentInstance.name = instanceName;
+    modalRef.componentInstance.name = instance.name;
   }
 }

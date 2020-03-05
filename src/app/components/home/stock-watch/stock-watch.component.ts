@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StockPullService } from 'src/app/services/stock-pull.service';
 import { DateServiceService } from 'src/app/services/date-service.service';
 import { TopStocksPopupComponent } from '../../top-stocks-popup/top-stocks-popup.component';
+import { TopStocksDetails } from '../../../services/interface'
 
 @Component({
   selector: 'app-stock-watch',
@@ -14,29 +15,48 @@ export class StockWatchComponent implements OnInit {
 
   title:string = "Top Stocks"
 
-  displayCompanyInfo = (stockName:string) => {
+  displayCompanyInfo = (stock:TopStocksDetails) => {
 
-    this.CompanyPopup.open(stockName)
+    this.CompanyPopup.open(stock)
   }
 
   topCompanyArray = []
 
-  testFunction = () => {
+  pullTopSecurities = () => {
 
     // Save an instance of four random stocks into an array using topIntrinioStocks function
     this.StockPull.topIntrinioStocks().subscribe(data => {
+      
+      data = {
+        securities: data['securities']
+      }
 
-        data = {
-          securities: data['securities'],
-          nextPage: data['next_page']
+      // Create an array where we push our random numbers
+
+      const featuredStockLength = 4
+      const arrayToPushNumbers = []
+
+        while (arrayToPushNumbers.length < featuredStockLength) {
+
+          let randomNum1Thru29 = (Math.round(Math.random()*29)) - 1
+
+          !arrayToPushNumbers.includes(randomNum1Thru29) ? arrayToPushNumbers.push(randomNum1Thru29) : ''
+
         }
 
-        for (let i = 1; i <=4; i++) {
+        arrayToPushNumbers.map(el => {
+          let indivSecurityInstance = data.securities[el];
 
-          let randomNum1Thru100 = (Math.round(Math.random()*100)) - 1
+          indivSecurityInstance = {
+            id: indivSecurityInstance['id'],
+            name: indivSecurityInstance['name'],
+            ticker: indivSecurityInstance['ticker']
+          }
 
-          this.topCompanyArray.push(data.securities[randomNum1Thru100])
-        }
+          this.topCompanyArray.push(indivSecurityInstance)
+
+        })
+
       })
   }
 
@@ -44,7 +64,7 @@ export class StockWatchComponent implements OnInit {
   }
 
   ngAfterContentInit() {
-    this.testFunction()
+    this.pullTopSecurities()
   }
 
   showStockDescription = (ticker:string) => {
