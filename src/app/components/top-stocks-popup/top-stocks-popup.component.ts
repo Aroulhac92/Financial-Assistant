@@ -7,21 +7,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 @Component({
   selector: 'ngbd-modal-content',
   templateUrl:'./top-stocks-popup.component.html',
-  styleUrls:['./top-stocks-popup.component.css']
-})
-
-/** Provide information to display here */
-export class NgbdModalContent {
-  @Input() name:string;
-  
-  
-  constructor(public activeModal: NgbActiveModal) {}
-  
-}
-
-@Component({
-  selector: 'app-top-stocks-popup',
-  templateUrl: './top-stocks-popup.component.html',
+  styleUrls:['./top-stocks-popup.component.css'],
   animations: [
     trigger('openClose', [
       state('open', style({
@@ -37,12 +23,27 @@ export class NgbdModalContent {
   ]
 })
 
+/** Provide information to display here */
+export class NgbdModalContent {
+  @Input() name:string;
+  @Input() ticker:string;
+  @Input() id:string;
+  @Input() isOpen:boolean;
+
+  
+  constructor(public activeModal: NgbActiveModal) {}
+  
+}
+
+@Component({
+  selector: 'app-top-stocks-popup',
+  templateUrl: './top-stocks-popup.component.html'
+})
+
 /** Do all work in this component */
 export class TopStocksPopupComponent {
   
   constructor(private modalService: NgbModal, private stockPull: StockPullService) {}
-  
-  isOpen:boolean;
   
   pullCompanyData(ticker:string) {
     // Run company name through a service that pulls historical and biographical data to be made available for NgbdModal
@@ -54,7 +55,9 @@ export class TopStocksPopupComponent {
   open(instance:TopStocksDetails) {
     const modalRef = this.modalService.open(NgbdModalContent);
     modalRef.componentInstance.name = instance.name;
-    this.isOpen = true
-    // this.pullCompanyData(instance.ticker)
+    modalRef.componentInstance.ticker = instance.ticker;
+    modalRef.componentInstance.id = instance.id;
+    modalRef.componentInstance.isOpen = true;
+    this.pullCompanyData(instance.ticker)
   }
 }

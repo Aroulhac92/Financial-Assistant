@@ -2,3 +2,17 @@
     opacity: 100%;
     transition: opacity 1s;
   }
+
+  .security-name {
+    font-weight: 500;
+    border-bottom: 1px solid black;
+    padding-bottom: 1%;
+  }
+
+  .modal-body div {
+    font-weight: 300;
+  }
+
+  div {
+    margin: 2% auto;
+  }

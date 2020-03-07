@@ -6,7 +6,10 @@
         </button>
     </div>
     <div class="modal-body">
-        <p>Hello, {{name}}!</p>
+        <p class="security-name">{{name}}</p>
+        <div>{{ ticker }}</div>
+        <div>{{ id }}</div>
+        <div>This is an empty section of the modal</div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
