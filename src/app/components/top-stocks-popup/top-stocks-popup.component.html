@@ -6,12 +6,12 @@
         </button>
     </div>
     <div class="modal-body">
-        <p class="security-name">{{name}}</p>
-        <div>{{ ticker }}</div>
-        <div>{{ id }}</div>
-        <div>This is an empty section of the modal</div>
+        <p class="security-name">{{ instance.name }}</p>
+        <div>{{ instance.ticker }} (Styling)</div>
+        <div>{{ instance.id }} (Styling)</div>
+        <div>This is an empty section of the modal for styling</div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+        <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')" (click)="closePopup()">Close</button>
     </div>
 </div>

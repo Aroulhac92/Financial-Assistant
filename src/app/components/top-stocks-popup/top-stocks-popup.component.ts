@@ -25,13 +25,12 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 
 /** Provide information to display here */
 export class NgbdModalContent {
-  @Input() name:string;
-  @Input() ticker:string;
-  @Input() id:string;
-  @Input() isOpen:boolean;
-
+  @Input() instance:object
+  @Input() isOpen:boolean
   
   constructor(public activeModal: NgbActiveModal) {}
+
+  closePopup() { this.isOpen = false }
   
 }
 
@@ -54,9 +53,7 @@ export class TopStocksPopupComponent {
 
   open(instance:TopStocksDetails) {
     const modalRef = this.modalService.open(NgbdModalContent);
-    modalRef.componentInstance.name = instance.name;
-    modalRef.componentInstance.ticker = instance.ticker;
-    modalRef.componentInstance.id = instance.id;
+    modalRef.componentInstance.instance = instance
     modalRef.componentInstance.isOpen = true;
     this.pullCompanyData(instance.ticker)
   }
