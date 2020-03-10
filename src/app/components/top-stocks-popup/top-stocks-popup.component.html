@@ -9,7 +9,7 @@
         <p class="security-name">{{ instance.name }}</p>
         <div>{{ instance.ticker }} (Styling)</div>
         <div>{{ instance.id }} (Styling)</div>
-        <div>This is an empty section of the modal for styling</div>
+        <input type="search" [(ngModel)]='data'><button name='enter' (click)="logToConsole()">Enter</button>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')" (click)="closePopup()">Close</button>

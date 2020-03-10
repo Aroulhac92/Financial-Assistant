@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { StockData, StockTrendData, CurrencyData, TechStockInfo, TopStocks } from './interface'
+import { type } from 'os'
+import { V4MAPPED } from 'dns'
+import { TechStocksComponent } from '../components/home/tech-stocks/tech-stocks.component'
 
 @Injectable({
   providedIn: 'root'
@@ -18,20 +21,35 @@ export class StockPullService {
   exchangeCur = 'USD'
   topCurrencies: Array<Object> = []
 
-  pullIntrinioData(arr: Array<string>) {
+  pullIntrinioData(input:any) {
 
-    let intrinioData = new Map()
+    let intrinioData:any
+    let intrinioObservables = []
 
-    let intrinioObservables = arr.map( el => this.http.get(`https://api-v2.intrinio.com/securities/${el}/prices/realtime?api_key=${this.intrinioAPIKey}`)
-    )
+    if (typeof input === "object") {
 
-    intrinioObservables.forEach(el => {
-      el.subscribe((data:TechStockInfo) => {
-        intrinioData.set(data.security.ticker, data.last_price)
+      intrinioData = new Map()
+
+      intrinioObservables = input.map(el => this.http.get(`https://api-v2.intrinio.com/securities/${el}/prices/realtime?api_key=${this.intrinioAPIKey}`)
+      )
+  
+      intrinioObservables.forEach(el => {
+        el.subscribe((data:TechStockInfo) => {
+          intrinioData.set(data.security.ticker, data.last_price)
+        })
       })
-    })
 
-    return intrinioData
+      return intrinioData
+
+    } else if (typeof input === "string") {
+
+      intrinioData = new Object
+
+      return this.http.get(`https://api-v2.intrinio.com/securities/${input}?api_key=${this.intrinioAPIKey}`)
+
+    }
+
+    // return intrinioData
   }
 
   topIntrinioStocks() {

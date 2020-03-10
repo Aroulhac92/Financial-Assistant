@@ -25,14 +25,21 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 
 /** Provide information to display here */
 export class NgbdModalContent {
-  @Input() instance:object
+  @Input() instance:TopStocksDetails
   @Input() isOpen:boolean
   
   constructor(public activeModal: NgbActiveModal) {}
 
   closePopup() { this.isOpen = false }
+
+  private data = ""
+  
+  logToConsole() {
+    console.log(this.instance.ticker)
+  }
   
 }
+
 
 @Component({
   selector: 'app-top-stocks-popup',
@@ -46,10 +53,16 @@ export class TopStocksPopupComponent {
   
   pullCompanyData(ticker:string) {
     // Run company name through a service that pulls historical and biographical data to be made available for NgbdModal
+
+    this.stockPull.pullIntrinioData(ticker).subscribe(data => console.log(data))
+
+    /*
     this.stockPull.pullStockInfo(ticker).subscribe(data => {
       console.log(data)
     })
+    */
   }
+
 
   open(instance:TopStocksDetails) {
     const modalRef = this.modalService.open(NgbdModalContent);

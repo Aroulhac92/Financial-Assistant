@@ -62,7 +62,7 @@ export class StockWatchComponent implements OnInit {
 
   ngOnInit() {
 
-    this.displayCompanyInfo({name: 'Example Stock', id: 'ey675', ticker: 'NYCR'})
+    this.displayCompanyInfo({name: 'Example Stock', id: 'ey675', ticker: 'AAPL'})
   }
 
   ngAfterContentInit() {
