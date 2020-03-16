@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { StockData, StockTrendData, CurrencyData, TechStockInfo, TopStocks } from './interface'
-import { type } from 'os'
-import { V4MAPPED } from 'dns'
 import { TechStocksComponent } from '../components/home/tech-stocks/tech-stocks.component'
 
 @Injectable({
